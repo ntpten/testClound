@@ -1,7 +1,18 @@
 import { Router, Request, Response } from "express";
 import { UserController } from "../controllers/user.controller";
+
 const router = Router();
 const userController = new UserController();
+
+// Route สำหรับแสดงฟอร์มการสมัคร
+router.get("/register", (req: Request, res: Response) => {
+    res.render("register.ejs");
+});
+
+// Route สำหรับรับข้อมูลการสมัคร
+router.post("/register", async (req: Request, res: Response) => {
+    await userController.registerUsers(req, res);
+});
 
 router.get("/users", async (req: Request, res: Response) => {
     await userController.getUsers(req, res);
