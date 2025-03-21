@@ -1,6 +1,7 @@
 import { createConnection } from "typeorm";
-import { Users } from "../entity/User";
+import { Users } from "../entity/Users";
 import dotenv from "dotenv";
+import { EventCoop } from "../entity/EventCoop";
 
 dotenv.config();
 
@@ -13,8 +14,8 @@ export const connectDatabase = async () => {
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [Users],
-      synchronize: true,
+      entities: [Users, EventCoop],
+      // synchronize: true,
       logging: true, // เปิด log การเชื่อมต่อเพื่อดูข้อความ error
       ssl: {
         rejectUnauthorized: false, // หากไม่ต้องการให้เกิดข้อผิดพลาดจาก certificate

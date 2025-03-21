@@ -1,5 +1,5 @@
 import { UserDao } from "../daos/user.dao";
-import { Users } from "../entity/User";
+import { Users } from "../entity/Users";
 export class UserService {
   private userDao = new UserDao();
 
@@ -7,7 +7,7 @@ export class UserService {
     return await this.userDao.getUsers();
   }
 
-  async registerUsers(email: string, password: string): Promise<Users> {
-    return await this.userDao.registerUsers(email, password);
-  }
+  // async registerUsers(email: string, password: string): Promise<Users> {
+  //   return await this.userDao.registerUsers(email, password);
+  // }
 }

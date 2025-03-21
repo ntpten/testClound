@@ -1,5 +1,5 @@
 import { createConnection } from "typeorm";
-import { Users } from "../entity/User";
+import { Users } from "../entity/Users";
 import dotenv from "dotenv";
 
 dotenv.config();

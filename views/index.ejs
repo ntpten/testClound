@@ -54,12 +54,18 @@
       <tbody>
         <% for(var i = 0; i < user.length; i++){ %>
         <tr>
-          <td><%= user[i].id %></td>
-          <td><%= user[i].email %></td>
-          <td><%= user[i].password %></td>
-          <td><%= user[i].name %></td>
-          <td><%= user[i].student %></td>
-          <td><%= user[i].domain %></td>
+          <td><%= user[i].u_id %></td>
+          <td><%= user[i].u_email %></td>
+          <td><%= user[i].u_fullname %></td>
+          <td><%= user[i].u_role %></td>
+          <td><%= user[i].u_std_id %></td>
+          <td><%= user[i].u_domain %></td>
+          <td><%= user[i].u_risk_soft %></td>
+          <td><%= user[i].u_risk_hard %></td>
+          <td><%= user[i].u_soft_hours %></td>
+          <td><%= user[i].u_hard_hours %></td>
+          <td><%= user[i].u_risk_status %></td>
+          <td><%= user[i].e_id %></td>
         </tr>
         <% } %>
       </tbody>
