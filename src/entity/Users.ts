@@ -43,5 +43,5 @@ export class Users {
   eventCoop?: EventCoop;
 
   @OneToMany(() => Certificate, (certificate) => certificate.user)
-  certificates!: Certificate[];
+  certificates?: Certificate[];  // เพิ่มการเชื่อมโยงระหว่าง User กับ Certificate
 }

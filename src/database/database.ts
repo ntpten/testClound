@@ -3,7 +3,13 @@ import { Users } from "../entity/Users";
 import dotenv from "dotenv";
 import { EventCoop } from "../entity/EventCoop";
 import { Certificate } from "../entity/Certificate";
-
+import { Question } from "../entity/Question";
+import { Assessment } from "../entity/Assessment";
+import { Activity } from "../entity/Activity";
+import { ActivityAssessment } from "../entity/ActivityAssessment";
+import { User_Activity } from "../entity/User_Activity";
+import { Choice } from "../entity/Choice";
+import { UserChoice } from "../entity/UserChoice";
 dotenv.config();
 
 export const connectDatabase = async () => {
@@ -15,11 +21,11 @@ export const connectDatabase = async () => {
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [Users, EventCoop, Certificate],
+      entities: [Users, EventCoop, Certificate, Question, Assessment, Activity, ActivityAssessment, User_Activity, Choice, UserChoice],
       // synchronize: true,
       logging: true, // เปิด log การเชื่อมต่อเพื่อดูข้อความ error
       ssl: {
-        rejectUnauthorized: false, // หากไม่ต้องการให้เกิดข้อผิดพลาดจาก certificate
+        rejectUnauthorized: false, // 
       },
     });
     console.log("Database connected successfully");

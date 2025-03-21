@@ -43,6 +43,13 @@
       <a href="/users" class="button">Users</a>
       <a href="/eventCoop" class="button">Even Coop</a>
       <a href="/certificate" class="button">Certificate</a>
+      <a href="/question" class="button">Quetion</a>
+      <a href="/assessment" class="button">Assessment</a>
+      <a href="/activity" class="button">Activity</a>
+      <a href="/activityAssessment" class="button">Activity Assessment</a>
+      <a href="/userActivity" class="button">User Activity</a>
+      <a href="/choice" class="button">Choice</a>
+      <a href="/userChoice" class="button">User Choice</a>
     </div>
     <h1>Certificate</h1>
     <table>
@@ -61,7 +68,7 @@
         <% for(var i = 0; i < certificate.length; i++){ %>
         <tr>
           <td><%= certificate[i].c_id %></td>
-          <td><%= certificate[i].u_id %></td>
+          <td><%= certificate[i].user?.u_id %></td>
           <td><%= certificate[i].c_name %></td>
           <td><%= certificate[i].c_type %></td>
           <td><%= certificate[i].c_img %></td>

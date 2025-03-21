@@ -1,15 +1,15 @@
 import { connectDatabase } from "../database/database";
 import { Repository } from "typeorm";
 import bcrypt from "bcrypt";
-import { Certificate } from "../entity/Certificate";
+import { Assessment } from "../entity/Assessment";
 
-export class CertificateDao {
-  private certificateRepository: Repository<Certificate> | null = null;
+export class AssessmentDao {
+  private assessmentRepository: Repository<Assessment> | null = null;
 
   constructor() {
     connectDatabase()
       .then((connection) => {
-        this.certificateRepository = connection.getRepository(Certificate);
+        this.assessmentRepository = connection.getRepository(Assessment);
       })
       .catch((error) => {
         console.error("Database connection failed:", error);
@@ -17,18 +17,14 @@ export class CertificateDao {
   }
 
 
-  async getCertificate(): Promise<Certificate[]> {
-    if (!this.certificateRepository) {
+  async getAssessment(): Promise<Assessment[]> {
+    if (!this.assessmentRepository) {
       throw new Error("Repository is not initialized");
     }
 
     try {
-      const result = await this.certificateRepository.find(
-        {
-          relations: ["user"],
-        }
-      );
-      console.log(result)
+      const result = await this.assessmentRepository.find();
+      // console.log(result)
       return result;
     } catch (error) {
       throw new Error(`Error from Dao GET User : ${error}`);
