@@ -4,6 +4,8 @@ import session from "express-session";
 import "reflect-metadata";
 import { connectDatabase } from "./database/database";
 import userRoute from "./routes/user.route";
+import eventCoopRoute from "./routes/eventCoop.route";
+import certificateCoopRoute from "./routes/certificate.route";
 import bodyParser from "body-parser";
 
 dotenv.config();
@@ -14,10 +16,12 @@ connectDatabase();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use("/api", userRoute);
+app.use("/users", userRoute);
+app.use("/eventCoop", eventCoopRoute);
+app.use("/certificate", certificateCoopRoute);
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
 
 // declare module "express-session" {

@@ -14,7 +14,7 @@ const userController = new UserController();
 //   await userController.registerUsers(req, res);
 // });
 
-router.get("/users", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
   await userController.getUsers(req, res);
 });
 

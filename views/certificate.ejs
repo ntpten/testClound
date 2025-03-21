@@ -41,42 +41,32 @@
   <body>
     <div>
       <a href="/users" class="button">Users</a>
-      <a href="/eventtCoop" class="button">Even Coop</a>
+      <a href="/eventCoop" class="button">Even Coop</a>
       <a href="/certificate" class="button">Certificate</a>
     </div>
-    <h1>Users</h1>
+    <h1>Certificate</h1>
     <table>
       <thead>
         <tr>
           <th>ID</th>
-          <th>Email</th>
-          <th>Fullname</th>
-          <th>Role</th>
-          <th>Student ID</th>
-          <th>Domain</th>
-          <th>Risk Soft</th>
-          <th>Risk Hard</th>
-          <th>Soft Hours</th>
-          <th>Hard Hours</th>
-          <th>Risk Status</th>
-          <th>Even Coop ID</th>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>IMAGES</th>
+          <th>Earned Hours</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
-        <% for(var i = 0; i < user.length; i++){ %>
+        <% for(var i = 0; i < certificate.length; i++){ %>
         <tr>
-          <td><%= user[i].u_id %></td>
-          <td><%= user[i].u_email %></td>
-          <td><%= user[i].u_fullname %></td>
-          <td><%= user[i].u_role %></td>
-          <td><%= user[i].u_std_id %></td>
-          <td><%= user[i].u_domain %></td>
-          <td><%= user[i].u_risk_soft %></td>
-          <td><%= user[i].u_risk_hard %></td>
-          <td><%= user[i].u_soft_hours %></td>
-          <td><%= user[i].u_hard_hours %></td>
-          <td><%= user[i].u_risk_status %></td>
-          <td><%= user[i].e_id %></td>
+          <td><%= certificate[i].c_id %></td>
+          <td><%= certificate[i].u_id %></td>
+          <td><%= certificate[i].c_name %></td>
+          <td><%= certificate[i].c_type %></td>
+          <td><%= certificate[i].c_img %></td>
+          <td><%= certificate[i].c_earned_hours %></td>
+          <td><%= certificate[i].c_status %></td>
         </tr>
         <% } %>
       </tbody>

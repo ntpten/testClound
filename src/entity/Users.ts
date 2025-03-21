@@ -1,10 +1,6 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToOne,
-  JoinColumn,
-} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinColumn } from "typeorm";
+import { Certificate } from "./Certificate"; // เพิ่มการ import Certificate
+
 import { EventCoop } from "./EventCoop";
 
 @Entity("users")
@@ -45,4 +41,7 @@ export class Users {
   @ManyToOne(() => EventCoop, (event) => event.users)
   @JoinColumn({ name: "e_id" })
   eventCoop?: EventCoop;
+
+  @OneToMany(() => Certificate, (certificate) => certificate.user)
+  certificates!: Certificate[];
 }
